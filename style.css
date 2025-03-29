@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Variable Declaration */
+:root {
+  --dayBox: #ccccff;
+  --dayborder: red;
+  --dayText: #000;
+  --dayIndicator: blue;
+  --dayHourHand: #000;
+  --dayMinHand: red;
+  --dayButton: blue;
+}
+.darkMode {
+  --dayBox: #444;
+  --dayborder: red;
+  --dayText: #fff;
+  --dayIndicator: #fff;
+  --dayHourHand: #00b894;
+  --dayMinHand: #fdcb6e;
+  --dayButton: #444;
+}
+
+/* ClockVerse */
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.anaClock {
+  position: relative;
+  background: var(--dayBox);
+  border: 4px solid var(--dayborder);
+  height: 370px;
+  width: 370px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 8px 10px black;
+}
+.anaClock::before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  background: black;
+  border: 4px solid red;
+  border-radius: 50%;
+  z-index: 5;
+}
+.anaClock span {
+  position: absolute;
+  transform: rotate(calc(30deg * var(--i)));
+  text-align: center;
+  inset: 17px;
+  font-size: 25px;
+  color: var(--dayText);
+}
+.anaClock span b {
+  transform: rotate(calc(-30deg * var(--i)));
+  display: inline-block;
+}
+.hands {
+  position: absolute;
+  height: 135px;
+  width: 5px;
+  background: var(--dayIndicator);
+  bottom: 50%;
+  border-radius: 100px;
+  transform-origin: bottom;
+  z-index: 4;
+}
+.hands.minute {
+  height: 120px;
+  width: 7px;
+  background: var(--dayMinHand);
+  transform: rotate(20deg);
+  z-index: 3;
+}
+.hands.hour {
+  height: 100px;
+  width: 10px;
+  background: var(--dayHourHand);
+  transform: rotate(100deg);
+  z-index: 2;
+}
+/* Digital Clock */
+.digiClock {
+  height: 370px;
+  width: 370px;
+  display: flex;
+  align-content: center;
+  display: none;
+}
+.digiClock .clockBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 200px;
+  background: var(--dayBox);
+  font-size: 40px;
+  font-weight: bolder;
+  border-radius: 10px;
+  border: 4px solid var(--dayborder);
+  color: var(--dayText);
+  box-shadow: 1px 8px 10px black;
+}
+.button {
+  width: 370px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px;
+}
+button {
+  color: black;
+  cursor: pointer;
+  border: 0;
+  background: var(--dayButton);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition-duration: 0.3s;
+}
+button:hover {
+  transform: scale(1.1);
+  background: violet;
+  color: black;
+}

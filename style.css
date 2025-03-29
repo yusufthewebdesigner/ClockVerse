@@ -19,9 +19,9 @@ body {
   --dayBox: #ccccff;
   --dayborder: red;
   --dayText: #000;
-  --dayIndicator: blue;
+  --dayIndicator: red;
+  --dayMinHand: blue;
   --dayHourHand: #000;
-  --dayMinHand: red;
   --dayButton: blue;
 }
 .darkMode {
@@ -29,8 +29,8 @@ body {
   --dayborder: red;
   --dayText: #fff;
   --dayIndicator: #fff;
-  --dayHourHand: #00b894;
   --dayMinHand: #fdcb6e;
+  --dayHourHand: #00b894;
   --dayButton: #444;
 }
 
